@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>香港六合彩 · 站点介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(145deg, #f9e6d8 0%, #f3d5b5 60%, #edd3b1 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 18px 40px;
+            color: #2c2a26;
+            line-height: 1.6;
+        }
+
+        .page-wrap {
+            max-width: 880px;
+            width: 100%;
+        }
+
+        /* 顶部导航 - 轻量链接条 */
+        .top-nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 16px 24px;
+            padding: 10px 6px 18px;
+            flex-wrap: wrap;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: #594735;
+            font-weight: 450;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            padding: 6px 2px;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        .top-nav a:hover {
+            border-bottom-color: #b67a5a;
+            color: #3e3025;
+        }
+
+        .top-nav .nav-em {
+            color: #8b5e3c;
+            font-weight: 550;
+        }
+
+        /* 白色内容卡片 */
+        .card {
+            background-color: #ffffffea;
+            backdrop-filter: blur(2px);
+            border-radius: 32px 24px 32px 24px;
+            box-shadow: 0 12px 28px rgba(98, 59, 32, 0.08), 0 4px 12px rgba(0, 0, 0, 0.02);
+            padding: 32px 30px;
+            margin-bottom: 28px;
+            transition: box-shadow 0.2s;
+        }
+
+        .card-soft {
+            background: rgba(255, 248, 242, 0.75);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 235, 215, 0.6);
+        }
+
+        h1 {
+            font-size: 2.1rem;
+            font-weight: 550;
+            color: #403324;
+            letter-spacing: 1px;
+            line-height: 1.25;
+            margin-bottom: 8px;
+        }
+
+        .hero-sub {
+            font-size: 1.05rem;
+            color: #6c5b4b;
+            border-left: 4px solid #c89b7a;
+            padding-left: 18px;
+            margin: 20px 0 10px;
+        }
+
+        .scene-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin: 16px 0 6px;
+        }
+
+        .scene-item {
+            background: #fcf6ef;
+            border-radius: 24px 16px 24px 16px;
+            padding: 20px 16px 18px;
+            box-shadow: 0 2px 6px rgba(155, 100, 55, 0.04);
+            transition: transform 0.1s, background 0.2s;
+        }
+
+        .scene-item:hover {
+            background: #f7ede2;
+            transform: translateY(-3px);
+        }
+
+        .scene-item h3 {
+            font-size: 1.1rem;
+            font-weight: 520;
+            color: #5d4635;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .scene-item p {
+            font-size: 0.94rem;
+            color: #4f4137;
+        }
+
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 520;
+            color: #4e3c2d;
+            margin: 28px 0 12px;
+            border-bottom: 2px dashed #dabb9e;
+            padding-bottom: 6px;
+        }
+
+        .faq-preview {
+            background: #fcf6ef;
+            border-radius: 20px;
+            padding: 20px 22px;
+            margin-top: 12px;
+        }
+
+        .faq-preview details {
+            margin-bottom: 12px;
+            font-size: 0.96rem;
+        }
+
+        .faq-preview summary {
+            font-weight: 500;
+            color: #5c4637;
+            cursor: pointer;
+            padding: 6px 0;
+            transition: color 0.1s;
+        }
+
+        .faq-preview summary:hover {
+            color: #a47553;
+        }
+
+        .faq-preview details[open] summary {
+            margin-bottom: 6px;
+        }
+
+        .faq-preview .faq-answer {
+            padding-left: 12px;
+            color: #3f342b;
+            border-left: 3px solid #e2cbb6;
+            margin-top: 2px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            background: #f0ddd0;
+            color: #3f2f22;
+            text-decoration: none;
+            padding: 10px 28px;
+            border-radius: 60px;
+            font-weight: 480;
+            letter-spacing: 0.4px;
+            font-size: 0.98rem;
+            box-shadow: 0 4px 10px rgba(160, 100, 55, 0.06);
+            transition: background 0.15s, transform 0.1s, box-shadow 0.15s;
+            border: 1px solid #dbbca0;
+            margin: 6px 0 4px;
+        }
+
+        .btn-link:hover {
+            background: #e9d1be;
+            box-shadow: 0 6px 14px rgba(140, 85, 40, 0.08);
+            transform: scale(0.97);
+        }
+
+        .btn-soft {
+            background: #f2e3d6;
+            border: 1px solid #d8b99b;
+            color: #4a382a;
+        }
+
+        .inline-link {
+            color: #7b5d45;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1.5px;
+            text-decoration-color: #dbb394;
+            font-weight: 470;
+        }
+
+        .inline-link:hover {
+            color: #553e2b;
+            text-decoration-color: #b5825f;
+        }
+
+        .notice-box {
+            background: #fcf3e9;
+            border-radius: 28px;
+            padding: 18px 24px;
+            font-size: 0.93rem;
+            border: 1px solid #e5cfbb;
+            color: #4e3e31;
+            margin: 12px 0;
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #776655;
+            padding-top: 22px;
+            border-top: 1px solid #dcc9b7;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 16px 12px 30px;
+            }
+
+            .card {
+                padding: 24px 18px;
+                border-radius: 28px 18px 28px 18px;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+
+            .top-nav {
+                justify-content: center;
+                gap: 10px 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+
+    <!-- 轻量导航 -->
+    <nav class="top-nav">
+        <a href="#" class="nav-em">首页</a>
+        <a href="#">介绍</a>
+        <a href="#">常见说明</a>
+        <a href="#">场景</a>
+    </nav>
+
+    <!-- 核心 Hero + 介绍 -->
+    <div class="card">
+        <h1>了解香港六合彩 · 站点导览</h1>
+        <div class="hero-sub">
+            一个围绕信息聚合与活动说明的轻导航页面，方便您快速定位自己关心的内容。
+        </div>
+        <p style="margin-top: 18px;">
+            如果您对 <a href="https://cn-hk-lottery.com" class="inline-link">香港六合彩</a> 感兴趣，想了解其基础背景、常见活动形式以及日常相关的信息渠道，这个页面为您整理了简要但实用的内容模块。我们力求以平实、清晰的表达，帮助您建立初步认知。以下三个场景模块分别对应不同关注方向，您可以根据需要浏览。
+        </p>
+        <p style="margin-top: 12px; color: #5f4b39;">
+            本站并非官方机构，而是致力于提供客观、克制的介绍与导航。所有内容仅供一般性参考。
+        </p>
+    </div>
+
+    <!-- 三个场景模块 -->
+    <div style="margin: 8px 0 10px;">
+        <div class="section-title">📋 常见场景模块</div>
+        <div class="scene-grid">
+            <div class="scene-item">
+                <h3>📌 信息了解</h3>
+                <p>希望快速了解香港六合彩的基本形式、历史脉络与普遍规则。适合初次接触的人。</p>
+            </div>
+            <div class="scene-item">
+                <h3>🧭 术语说明</h3>
+                <p>对活动中常见的专有名词、玩法名称、赔率表述进行解释，降低理解门槛。</p>
+            </div>
+            <div class="scene-item">
+                <h3>🔐 可信提示</h3>
+                <p>如何辨别信息来源的可靠性、常见的注意事项，以及理性参与的态度提醒。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 站点介绍与可信说明 (核心) -->
+    <div class="card card-soft">
+        <div style="display: flex; flex-wrap: wrap; gap: 10px 28px; justify-content: space-between;">
+            <div style="flex: 1 1 200px;">
+                <h2 style="font-size: 1.2rem; font-weight: 540; color: #4d392b;">站点介绍</h2>
+                <p style="margin-top: 8px;">
+                    本页面是 <a href="https://cn-hk-lottery.com" class="inline-link">香港六合彩</a> 相关信息的轻导航入口。我们不生成数据，只做结构化的内容整理。从活动背景到常见疑问，我们希望用平实的语言，让访问者获得一个轮廓清晰的认识。所有模块均基于可查证的公开资料与普遍认知编写。
+                </p>
+            </div>
+            <div style="flex: 1 1 200px;">
+                <h2 style="font-size: 1.2rem; font-weight: 540; color: #4d392b;">可信说明</h2>
+                <p style="margin-top: 8px;">
+                    我们坚持三个原则：不夸大、不诱导、不误导。页面内提到的任何历史、规则或说法，都力求与主流公开信息一致。如果您发现任何不准确之处，欢迎通过站点渠道反馈。请始终将 <a href="https://cn-hk-lottery.com" class="inline-link">香港六合彩</a> 视为众多娱乐选择之一，保持理性与适度。
+                </p>
+            </div>
+        </div>
+        <div class="notice-box" style="margin-top: 20px;">
+            ⚡ 提醒：任何涉及财务决策的行为，都请基于个人判断与官方渠道核实。本页内容不构成任何操作建议。
+        </div>
+    </div>
+
+    <!-- 常见说明 (FAQ 摘要) -->
+    <div class="card">
+        <div class="section-title" style="margin-top: 4px;">❓ 常见说明摘要</div>
+        <div class="faq-preview">
+            <details>
+                <summary>香港六合彩是官方活动吗？</summary>
+                <div class="faq-answer">
+                    是由香港赛马会经办的一种数字游戏，具有较长历史。所有信息请以香港赛马会官方发布为准。
+                </div>
+            </details>
+            <details>
+                <summary>如何获取可靠的信息？</summary>
+                <div class="faq-answer">
+                    建议通过具备公信力的媒体或直接访问 <a href="https://cn-hk-lottery.com" class="inline-link">香港六合彩</a> 相关页面了解基本背景，同时留意信息发布日期与来源。
+                </div>
+            </details>
+            <details>
+                <summary>为什么强调理性参与？</summary>
+                <div class="faq-answer">
+                    任何形式的数字游戏都伴随概率与风险。保持平常心，量力而行，将其视为一种休闲方式而非收入来源，是更健康的态度。
+                </div>
+            </details>
+        </div>
+        <div style="margin-top: 22px; text-align: right;">
+            <a href="https://cn-hk-lottery.com" class="btn-link">香港六合彩</a>
+            <span style="display: inline-block; margin-left: 10px; font-size: 0.85rem; color: #7f6b59;">· 导航入口</span>
+        </div>
+    </div>
+
+    <!-- 底部说明 -->
+    <div class="footer-note">
+        内容仅供参考 · 保持理性 · 本站非官方渠道 · 使用前请自行判断
+    </div>
+</div>
+</body>
+</html>
